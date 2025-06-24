@@ -191,7 +191,12 @@
     <a href="{{ url_for('quiz') }}" class="btn btn-primary">Take Today's Quiz</a>
   </div>
 </div>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Preloader -->
+  <div id="preloader"></div>
+  
 {% if history %}
 <script>
   const ctx = document.getElementById("scoreChart").getContext("2d");
