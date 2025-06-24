@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Heartsave</title>
+  <title>Lifespark</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="../static/assets/img/favicon.png" rel="icon">
-  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -25,14 +25,301 @@
 <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="../static/assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
 <style>
+.ratio-9x16 {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 1.2rem;
+}
+
+@media (max-width: 768px) {
+
+}
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.hero .overlay {
+  backdrop-filter: blur(2px);
+}
+.heartbeat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.heartbeat-btn .icon { font-size: 1.5rem; }
+.heartbeat-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #f9d423, #ff4e50);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  color:black;
+}
+.heartbeat-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  animation: pulse 2s infinite ease-in-out;
+  border-radius: 999px;
+  z-index: 0;
+}
+.heartbeat-btn .text,
+.heartbeat-btn .icon { z-index: 1; }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+.mockup-phone {
+  width: 300px;
+  height: 570px;
+  background: #111;
+  border: 16px solid #000;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  position: relative;
+}
+.mockup-phone::before {
+  content: '';
+  width: 50px;
+  height: 5px;
+  background: #333;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+@media (max-width: 768px) {
+  .mockup-phone {
+    width: 180px;
+    height: 360px;
+  }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+}
+
+.video-row-minimal {
+  display: flex;
+  align-items: center; 
+  gap: 2.5rem;
+  margin-bottom: 118px;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  position: relative;
+}
+
+.video-col-minimal {
+  flex: 0 0 450px;        
+  max-width: 480px;       
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+
+.video-col-minimal .ratio {
+  border-radius: 1.2rem;
+  overflow: hidden;
+  width: 100%;
+}
+.video-col-minimal video {
+  width: 100%;
+  max-height: 680px;
+  object-fit: contain;
+/*  background: black;*/
+  background: #f5f6fa;
+  border-radius: 1.2rem;
+  margin: 0;
+  box-shadow: none;
+}
+.desc-col-minimal mx-2 mx-md-0 {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 0.5rem;
+}
+.video-title-minimal {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222a44;
+  margin-bottom: 0.2em;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-top: 0.3em;
+}
+.video-badge-minimal {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  background: #e3f1fa;
+  color: #2370b6;
+  padding: 0.21em 0.92em;
+  border-radius: 999px;
+  box-shadow: none;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  margin-right: 0.35em;
+  margin-top: 0;
+  white-space: nowrap;
+  /* Make sure it's not 100% width! */
+  width: auto;
+  min-width: 0;
+}
+
+.video-badge-minimal.label2 {
+  background: #f7e8fd;
+  color: #9f52b6;
+}
+
+.video-badge-minimal.aed {
+  background: #fde2e0;
+  color: #c33e2e;
+}
+
+
+
+.video-desc-minimal {
+  font-size: 1.08rem;
+  color: #444950;
+  line-height: 1.65;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  font-weight: 400;
+  max-width: 680px;       
+  text-align: justify;    
+}
+@media (max-width: 768px) {
+  .video-row-minimal {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin-bottom: 120px;
+  }
+  .video-row-minimal2 {
+    margin-bottom: 0px;
+  }
+
+  .video-col-minimal {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .video-col-minimal video {
+    height: auto !important;
+    max-height: 480px;
+/*    border: 1px solid black;*/
+    border-radius: 1rem;
+  }
+
+  .desc-col-minimal{
+    padding-left: 0 !important;
+    margin-top: -4.5rem;
+  }
+
+  .video-title-minimal {
+    font-size: 1.25rem;
+  }
+
+  .video-desc-minimal {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+  .abc{
+    text-align: center;
+  }
+  .about img{
+    display: block;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .heartbeat-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+
+  .heartbeat-btn .icon {
+    font-size: 1.2rem;
+  }
+  .hero h1{
+    font-size: 2.7rem;
+  }
+    .hero p{
+    font-size: 1.2rem;
+  }
+}
+
+ /* .button-wrapper {
+    text-align: center;
+  }*/
+
+  .button-wrapper a {
+    display: inline-block;
+    margin: 8px;
+    text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    .button-wrapper {
+      display: flex;
+/*      justify-content: center;*/
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .button-wrapper a {
+      margin: 0;
+    }
+  }
+  .emergency-card {
+  border-left: 5px solid #ff6b6b;
+  transition: all 0.3s ease-in-out;
+  background: #ffffff;
+}
+.emergency-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.emergency-card i {
+  min-width: 32px;
+}
 
 </style>
 </head>
 
 <body class="index-page">
-
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -57,34 +344,45 @@
   </div>
 </header>
 
+
   <main class="main">
 
 
-<section id="hero" class="hero d-flex align-items-center" style="min-height: 100vh; background: url('../static/assets/img/hero-bg.jpg') center center / cover no-repeat;">
+<section id="hero" class="hero d-flex align-items-center" style="min-height: 100vh; background: url('assets/img/hero-bg.jpg') center center / cover no-repeat;">
   <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
   <div class="container position-relative z-2" data-aos="fade-up">
     <div class="row align-items-center">
       
       <!-- Left: Text Content -->
-      <div class="col-lg-6 text-light">
-        <h1 class="display-2 fw-bold text-light mb-4">HeartSave</h1>
-        <p class="lead mb-4">Empowering you to take action.<br>Learn CPR. Save lives.</p>
-        <a href="#cpr-videos" class="heartbeat-btn">
-          <span class="icon"><i class="bi bi-play-circle-fill"></i></span>
-          <span class="text">Watch Videos</span>
-        </a>
+      <div class="col-lg-8 text-light">
+        <h1 class="display-2 fw-bold text-light mb-4 def">Lifespark</h1>
+        <p class="lead mb-4">Help begins with you. Learn CPR. Protect the heartbeat of your community.</p>
+
+<div class="button-wrapper">
+  <a href="#cpr-videos" class="heartbeat-btn">
+    <span class="icon"><i class="bi bi-play-circle-fill"></i></span>
+    <span class="text">Watch Videos</span>
+  </a>
+
+  <a href="#contact" class="heartbeat-btn" style="background-color: #ff6b6b;">
+    <span class="icon"><i class="bi bi-person-plus-fill"></i></span>
+    <span class="text">Join Lifespark</span>
+  </a>
+</div>
+
       </div>
 
       <!-- Right: Video in Mockup -->
-      <div class="col-lg-6 d-flex justify-content-center mt-5 mt-lg-0">
-        <div class="mockup-phone">
-          <div class="phone-screen">
-            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; border-radius:24px;">
-              <source src="../static/assets/img/8.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
+<div class="col-lg-4 d-none d-md-flex justify-content-center mt-5 mt-lg-3">
+  <div class="mockup-phone">
+    <div class="phone-screen">
+      <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; border-radius:24px;">
+        <source src="assets/img/8.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
 
     </div>
   </div>
@@ -93,19 +391,62 @@
 
 
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+ <!-- About Section -->
+<section id="about" class="about section py-5 d-none d-md-block" style="background: #f8fafd;">
+  <div class="container" data-aos="fade-up">
+    <div class="row align-items-center justify-content-center">
+      <!-- Image Column -->
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <img src="assets/img/about.jpg"
+             alt="About Lifespark" 
+             class="img-fluid rounded-4 shadow"
+             style="object-fit:cover;min-height:320px;max-height:400px;width:90%; margin: 0 auto;">
+      </div>
+      <!-- Text Column -->
+      <div class="col-lg-7 px-lg-2">
+        <h3 class="fw-bold mb-3 abc" style="color:#222a44; font-size: 2rem;">About Lifespark</h3>
+        <p class="lead" style="color:#666;line-height:1.65; text-align: text-justify;">
+          Lifespark is dedicated to empowering individuals with lifesaving CPR knowledge and skills. Our mission is to make life-saving training accessible, modern, and engaging for everyone. Whether you're a parent, a student, or a concerned citizen, Lifespark provides clear, step-by-step resources to help you confidently respond in an emergency.
+        </p>
+        <p style="color:#888;line-height:1.7; text-align: text-justify;">
+          Our expert-led videos and guides are designed for all ages and backgrounds, making it simple to learn and practice CPR and emergency response techniques. Join our community, protect your loved ones, and help create a safer world—one heartbeat at a time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-     
-
-    </section><!-- /About Section -->
 
 
-<section id="cpr-videos" class="section py-5" style="background: #f9f9f9;">
+<section id="about" class="about section py-5 d-block d-md-none" style="background: #f8fafd;">
+  <div class="container" data-aos="fade-up">
+    <div class="card p-4 rounded-4 border-0 shadow-sm" style="background: #ffffff;">
+      <!-- Image -->
+      <div class="mb-3 text-center">
+        <img src="assets/img/about.jpg" alt="About Lifespark"
+             class="img-fluid rounded-4"
+             style="max-height: 320px; width: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Text Content -->
+      <div class="text-center">
+        <h3 class="fw-bold mb-3" style="color:#222a44; font-size: 1.65rem;">About Lifespark</h3>
+        <p class="text-muted mb-3" style="font-size: 1.05rem; line-height: 1.6; text-align: justify;">
+          Lifespark empowers individuals with lifesaving CPR knowledge and skills. Our mission is to make CPR training accessible and engaging for everyone.
+        </p>
+        <p class="text-muted" style="font-size: 1.05rem; line-height: 1.6; text-align: justify;">
+          Whether you're a parent, student, or concerned citizen, our expert-led videos guide you step-by-step to respond confidently in emergencies.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cpr-videos" class="section pt-5" style="background: #f9f9f9;">
   <div class="container" data-aos="fade-up">
 
     <!-- Section Header -->
-    <div class="section-title">
+    <div class="section-title d-none d-md-block">
       <div class="section-title-label">
         <small>Video Collection</small>
         <h2>CPR Training Library</h2>
@@ -115,145 +456,481 @@
       </p>
     </div>
 
+<!-- Mobile Section Title (Visible Only on Small Screens) -->
+<div class="section-title-mobile d-block d-md-none rounded-4 p-4 mb-4">
+  <div class="text-center">
+    <small class="text-uppercase fw-semibold" style="letter-spacing: 0.05em; color:#fbb813;" >Video Collection</small>
+    <h2 class="fw-bold mt-2 mb-3" style="font-size: 1.5rem; color: #222a44;">CPR Training Library</h2>
+    <p class="text-muted" style="font-size: 1rem; line-height: 1.6; text-align: center;">
+      Explore hands-on CPR techniques taught by experts. Each video is clear, practical, and ready when you need it most.
+    </p>
+  </div>
+</div>
 
 
-
-    <!-- Search & Filter -->
-    <div class="row g-3 mb-4 align-items-center">
-      <div class="col-md-7">
-        <input type="text" id="videoSearch" class="form-control border-0 shadow-sm px-4 py-3 rounded-pill" placeholder="Search videos..." />
+<div id="videoGrid">
+  <!-- 1 -->
+  <div class="video-row-minimal">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/1.png" ><source src="assets/img/1.mp4" type="video/mp4"></video>
       </div>
-      <div class="col-md-5 d-flex gap-2 flex-wrap justify-content-end">
-        <button class="btn btn-sm filter-btn rounded-pill" data-filter="*">All</button>
-        <button class="btn btn-sm filter-btn rounded-pill" data-filter=".basic">Basic CPR</button>
-        <button class="btn btn-sm filter-btn rounded-pill" data-filter=".infant">Infant CPR</button>
-        <button class="btn btn-sm filter-btn rounded-pill" data-filter=".aed">AED Usage</button>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">Essential</span>
+      </div>
+      <div class="video-title-minimal">Size-Up</div>
+      <div class="video-desc-minimal">
+Before assisting someone who is injured or in distress, it’s crucial to stay calm and take a moment to evaluate the situation. This initial step, known as a “size-up,” ensures your safety and the safety of others before any first aid is provided. In this video, you’ll learn how to quickly assess the environment for potential hazards such as fire, exposed electrical wires, dangerous chemicals, or unstable structures. You’ll also be trained to recognize other risks like moving traffic or violent individuals that could put you or others in danger.
+<br><br>
+Once you’ve determined that the scene is safe, the video will guide you through the next critical steps: checking if the person is responsive by gently tapping them and speaking to them, calling emergency services for professional help, and deciding when to begin first aid or CPR depending on the person’s condition. These actions are the foundation of effective emergency response and can make a life-saving difference in critical moments.
+      </div>
+    </div>
+  </div>
+  <!-- 2 -->
+  <div class="video-row-minimal">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/2.png" ><source src="assets/img/2.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0 mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">Beginner</span>
+      </div>
+      <div class="video-title-minimal">Initial Assessment</div>
+      <div class="video-desc-minimal">
+Once you’ve ensured the scene is safe, the next crucial step is the initial assessment—a quick but thorough check to determine the person’s condition. This involves checking for signs of life, including normal breathing and a pulse. In this video, you’ll learn how to look for chest movement, listen for breath sounds, and feel for a pulse at key points like the neck or wrist. If the person isn’t breathing or doesn’t have a pulse, you’ll be guided on when and how to begin life-saving measures like CPR or rescue breathing without delay.
+<br><br>
+If the person is conscious and breathing, the video also explains how to communicate with them clearly and calmly to gather important information. You’ll learn how to ask about pain, medical conditions, and what happened, while also scanning the body for visible injuries like bleeding, swelling, or deformities. This quick but focused assessment helps you prioritize actions and prepare to give the most effective first aid possible until professional help arrives.
+      </div>
+    </div>
+  </div>
+  <!-- 3 -->
+  <div class="video-row-minimal">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/3.png" ><source src="assets/img/3.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">Beginner</span>
+      </div>
+      <div class="video-title-minimal">Head-to-Toe Examination</div>
+      <div class="video-desc-minimal">
+After the initial assessment, performing a thorough head-to-toe examination is essential to identify any hidden or less obvious injuries. This video guides you step-by-step through how to systematically check each part of the body—starting with the head and moving down through the eyes, neck, chest, arms, abdomen, pelvis, legs, and back. By following a consistent order, you ensure that no area is overlooked, which is especially important when the person may not be able to clearly describe their pain or injuries.
+<br><br>
+You’ll learn how to look for key signs such as bleeding, bruising, swelling, deformities, or areas that cause pain when touched. The video also emphasizes the importance of clear and gentle communication throughout the examination. Talking to the patient—if they are conscious—helps keep them calm and involved while allowing you to gather valuable information. This detailed check helps you make informed decisions about what first aid may be needed and ensures that emergency responders receive an accurate report when they arrive.
+      </div>
+    </div>
+  </div>
+  <!-- 4 -->
+  <div class="video-row-minimal">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/4.png" ><source src="assets/img/4.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">Beginner</span>
+      </div>
+      <div class="video-title-minimal">Checking Vital Signs</div>
+      <div class="video-desc-minimal">
+ Monitoring vital signs is a key part of understanding a person’s overall condition and how their body is responding to an injury or illness. This video teaches you how to take and interpret basic vital signs, including how to find and count a pulse, measure the breathing rate, and observe the person’s skin for temperature, color, and moisture. Each of these signs provides valuable information about how well the body is functioning and can help identify signs of shock, distress, or internal injuries.
+ <br><br>
+You’ll also learn how to check the pupils for size, equality, and reaction to light—an important indicator of possible head injuries or neurological issues. These vital checks are simple but powerful tools that help you assess the severity of the situation and monitor any changes over time. Knowing how to track these signs allows you to provide better first aid and communicate clearly with emergency responders, giving them the most accurate and helpful information when they take over care.
+      </div>
+    </div>
+  </div>
+  <!-- 5 -->
+  <div class="video-row-minimal">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/5.png" ><source src="assets/img/5.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">All Levels</span>
+      </div>
+      <div class="video-title-minimal">Patient History (SAMPLE)</div>
+      <div class="video-desc-minimal">
+Collecting a clear and accurate patient history is essential for understanding what may have caused the emergency and how best to treat the person. In this video, you’ll be introduced to the SAMPLE method—a simple and effective way to remember the key questions to ask. SAMPLE stands for: Signs and symptoms, Allergies, Medications, Past medical history, Last food or drink, and Events leading up to the emergency. These categories cover the most important information that medical professionals will need when they arrive.
+<br><br>
+You’ll learn how to ask these questions calmly and respectfully, even in stressful situations, and how to adapt your approach depending on whether the person is conscious, confused, or unresponsive. The video also demonstrates how to record responses clearly, either by writing them down or sharing them verbally with emergency responders. Gathering this information can help doctors and EMTs make faster, more accurate decisions, leading to better care and outcomes for the patient.
+      </div>
+    </div>
+  </div>
+  <!-- 6 -->
+  <div class="video-row-minimal">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/6.png" ><source src="assets/img/6.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">Intermediate</span>
+      </div>
+      <div class="video-title-minimal">Spine Assessment</div>
+      <div class="video-desc-minimal">
+In situations like falls, vehicle crashes, or sports injuries, there’s a serious risk of spinal injury. This video teaches you how to perform a careful spine assessment to help detect possible damage to the neck or back—without causing further harm. You’ll learn how to recognize warning signs such as neck or back pain, tingling, numbness, or weakness in the arms and legs. These symptoms may indicate a spinal injury, and moving the person unnecessarily could make things worse.
+<br><br>
+The video emphasizes the importance of keeping the person completely still if a spinal injury is suspected. You’ll learn how to assess their ability to move or feel their limbs by gently asking them to wiggle their fingers or toes—without encouraging any full-body movement. You’ll also be shown how to support the head and neck in a neutral position while waiting for professional responders. Knowing how to manage potential spinal injuries safely can prevent permanent damage and make a crucial difference in a person’s recovery.
+      </div>
+    </div>
+  </div>
+  <!-- 7 -->
+  <div class="video-row-minimal">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/7.png" ><source src="assets/img/7.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">Essential</span>
+      </div>
+      <div class="video-title-minimal">Choking Aid</div>
+      <div class="video-desc-minimal">
+        Choking can become life-threatening quickly. This video teaches how to recognize when someone is choking and how to perform the Heimlich maneuver. You'll learn the proper hand placement and motion, when to call 911, and what to do if the person becomes unconscious and stops breathing.
+      </div>
+    </div>
+  </div>
+  <!-- 8 -->
+  <div class="video-row-minimal">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/8.png" ><source src="assets/img/8.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">Essential</span>
+      </div>
+      <div class="video-title-minimal">CPR Basics</div>
+      <div class="video-desc-minimal">
+When someone has no pulse and isn’t breathing, their heart has stopped—and every second counts. Cardiopulmonary resuscitation (CPR) is a life-saving technique that keeps blood and oxygen flowing to the brain and other vital organs until professional help arrives. In this video, you’ll learn how to recognize when CPR is needed and how to perform it with confidence. It begins with high-quality chest compressions—placing your hands in the correct position on the chest, using your body weight for effective depth, and maintaining a steady rhythm of about 100 to 120 compressions per minute.
+<br><br>
+The video also explains how to give rescue breaths safely, including how to tilt the head back, pinch the nose, and deliver each breath while watching the chest rise. You’ll learn when to alternate between compressions and breaths, and how to adapt the technique if you’re doing hands-only CPR. It also covers when to stop—such as when the person shows signs of life, when a trained responder takes over, or when emergency medical personnel arrive. By mastering CPR, you can give someone their best chance at survival in a critical moment.
+      </div>
+    </div>
+  </div>
+    <div class="video-row-minimal video-row-minimal2">
+    <div class="video-col-minimal">
+      <div class="ratio ratio-9x16">
+        <video controls poster="assets/img/9.png" ><source src="assets/img/8.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="desc-col-minimal mx-2 mx-md-0">
+      <div style="margin-bottom: 0.5em;">
+        <span class="video-badge-minimal">Basic CPR</span>
+        <span class="video-badge-minimal label2">Essential</span>
+      </div>
+      <div class="video-title-minimal">Using an AED</div>
+      <div class="video-desc-minimal">
+ An Automated External Defibrillator (AED) is a powerful tool that can help restart a person’s heart during sudden cardiac arrest. This video walks you through how to use an AED confidently and correctly, even if you’ve never used one before. You’ll learn how to quickly power on the device, expose the person’s chest, and place the pads in the correct positions—typically one pad on the upper right chest and the other on the lower left side. The AED will then analyze the heart’s rhythm and tell you if a shock is needed.
+ <br><br>
+The video also emphasizes the importance of staying calm and listening carefully to the AED’s voice prompts, which guide you step-by-step through the process. You’ll learn how to ensure no one is touching the person during analysis or shock delivery, and how to immediately resume CPR between shocks if advised. When used correctly and in combination with CPR, an AED significantly increases the chances of survival until emergency medical responders arrive and take over.
+      </div>
+    </div>
+  </div>
+
+</section>
+<section id="emergency-guide" class="section py-5" style="background: #f8fafd;">
+  <div class="container" data-aos="fade-up">
+
+    <!-- Section Title for Desktop -->
+    <div class="section-title d-none d-md-block">
+      <div class="section-title-label">
+        <small>Emergency Toolkit</small>
+        <h2>Step-by-Step Emergency Response Guide</h2>
+      </div>
+      <p>
+        Learn how to respond confidently in critical moments. This guide covers essential first aid procedures—from CPR and choking to burns, AED use, and more.
+      </p>
+    </div>
+
+    <!-- Section Title for Mobile -->
+    <div class="section-title-mobile d-block d-md-none rounded-4 p-4 mb-4">
+      <div class="text-center">
+        <small class="text-uppercase fw-semibold" style="letter-spacing: 0.05em; color:#fbb813;">Emergency Toolkit</small>
+        <h2 class="fw-bold mt-2 mb-3" style="font-size: 1.5rem; color: #222a44;">Step-by-Step Emergency Response Guide</h2>
+        <p class="text-muted" style="font-size: 1rem; line-height: 1.6;">
+          Learn how to respond confidently in critical moments. This guide covers essential first aid procedures—from CPR and choking to burns, AED use, and more.
+        </p>
       </div>
     </div>
 
-    <!-- Video Grid -->
-   <div class="row g-4" id="videoGrid">
-    <!-- 9 Video Blocks -->
-    <div class="col-md-6 col-lg-4 element-item basic" data-title="Size-Up">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/1.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">Size-Up</h5>
-          <p class="text-muted small">Before helping someone who is hurt, it’s important to stay calm and make sure the scene is safe for you...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">Basic CPR</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-4 element-item basic" data-title="Initial Assessment">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/2.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">Initial Assessment</h5>
-          <p class="text-muted small">Once the scene is safe, the next step is to check if the person is breathing and has a pulse...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">Basic CPR</span>
+    <!-- Cards Grid -->
+    <div class="row g-4">
+      <!-- CPR -->
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 h-100 rounded-4 shadow-sm emergency-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-heart-pulse fs-2 text-danger me-3"></i>
+            <h5 class="fw-bold mb-0 text-danger">CPR</h5>
+          </div>
+          <ul class="mb-2 ps-3">
+            <li>Unresponsive & not breathing</li>
+            <li>100–120 compressions/min</li>
+            <li>2 inches deep, breaths if trained</li>
+            <li>Gentler for children/infants</li>
+          </ul>
+          <small class="text-muted">CPR can double/triple survival (AHA)</small>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6 col-lg-4 element-item basic" data-title="Head-to-Toe Examination">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/3.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">Head-to-Toe Examination</h5>
-          <p class="text-muted small">A complete body check helps identify hidden injuries...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">Basic CPR</span>
+      <!-- AED -->
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 h-100 rounded-4 shadow-sm emergency-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-lightning-charge fs-2 text-warning me-3"></i>
+            <h5 class="fw-bold mb-0 text-danger">AED</h5>
+          </div>
+          <ul class="mb-2 ps-3">
+            <li>Use on non-breathing person</li>
+            <li>Follow voice prompts</li>
+            <li>Attach pads & deliver shock</li>
+            <li>Resume CPR right after</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6 col-lg-4 element-item basic" data-title="Checking Vital Signs">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/4.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">Checking Vital Signs</h5>
-          <p class="text-muted small">Vital signs give important clues about a person's condition...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">Basic CPR</span>
+      <!-- Bleeding -->
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 h-100 rounded-4 shadow-sm emergency-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-droplet-half fs-2 text-primary me-3"></i>
+            <h5 class="fw-bold mb-0 text-danger">Bleeding</h5>
+          </div>
+          <ul class="mb-2 ps-3">
+            <li>Firm pressure with cloth</li>
+            <li>Elevate if possible</li>
+            <li>Tourniquet only if severe</li>
+            <li>Don’t remove embedded objects</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6 col-lg-4 element-item basic" data-title="Patient History (SAMPLE)">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/5.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">Patient History (SAMPLE)</h5>
-          <p class="text-muted small">Asking the right questions helps responders provide better care using the SAMPLE method...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">Basic CPR</span>
+      <!-- Choking -->
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 h-100 rounded-4 shadow-sm emergency-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-person-dash fs-2 text-danger me-3"></i>
+            <h5 class="fw-bold mb-0 text-danger">Choking</h5>
+          </div>
+          <ul class="mb-2 ps-3">
+            <li>Ask if the person is choking</li>
+            <li>Abdominal thrusts above navel</li>
+            <li>Back slaps/chest thrusts for infants</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6 col-lg-4 element-item basic" data-title="Spinal Injury Check">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/6.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">Spinal Injury Check</h5>
-          <p class="text-muted small">If someone has fallen or been in a crash, their spine could be injured...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">Basic CPR</span>
+      <!-- Burns -->
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 h-100 rounded-4 shadow-sm emergency-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-fire fs-2 text-warning me-3"></i>
+            <h5 class="fw-bold mb-0 text-danger">Burns & Cuts</h5>
+          </div>
+          <ul class="mb-2 ps-3">
+            <li>Cool with water 10–15 minutes</li>
+            <li>Don’t use ice or ointments</li>
+            <li>Cover deep burns, seek care</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6 col-lg-4 element-item basic" data-title="Choking Response">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/7.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">Choking Response</h5>
-          <p class="text-muted small">Choking can become life-threatening quickly. This video teaches how to recognize and respond...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">Basic CPR</span>
+      <!-- Drowning -->
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 h-100 rounded-4 shadow-sm emergency-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-droplet fs-2 text-info me-3"></i>
+            <h5 class="fw-bold mb-0 text-danger">Drowning</h5>
+          </div>
+          <ul class="mb-2 ps-3">
+            <li>Ensure water safety first</li>
+            <li>Start CPR if not breathing</li>
+            <li>Use AED if available</li>
+            <li>Keep warm on firm surface</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6 col-lg-4 element-item basic" data-title="CPR Basics">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/8.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">CPR Basics</h5>
-          <p class="text-muted small">When a person isn’t breathing and has no pulse, CPR can save their life...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">Basic CPR</span>
+      <!-- Fracture -->
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 h-100 rounded-4 shadow-sm emergency-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-bandaid fs-2 text-secondary me-3"></i>
+            <h5 class="fw-bold mb-0 text-danger">Fracture</h5>
+          </div>
+          <ul class="mb-2 ps-3">
+            <li>Look for deformity or pain</li>
+            <li>Immobilize with splint</li>
+            <li>Don't move unless necessary</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6 col-lg-4 element-item aed" data-title="Using an AED">
-      <div class="card video-card text-center">
-        <div class="ratio ratio-9x16">
-          <video controls><source src="../static/assets/img/9.mp4" type="video/mp4"></video>
-        </div>
-        <div class="p-3">
-          <h5 class="fw-semibold mt-3">Using an AED</h5>
-          <p class="text-muted small">An Automated External Defibrillator (AED) can restart a heart during sudden cardiac arrest...</p>
-          <span class="badge rounded-pill bg-secondary-subtle text-dark">AED Usage</span>
+      <!-- Heatstroke -->
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 h-100 rounded-4 shadow-sm emergency-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-thermometer-high fs-2 text-danger me-3"></i>
+            <h5 class="fw-bold mb-0 text-danger">Heatstroke</h5>
+          </div>
+          <ul class="mb-2 ps-3">
+            <li>Temp >104°F, confusion</li>
+            <li>Move to shade, cool body</li>
+            <li>Give water if conscious</li>
+            <li>Call emergency services</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+
+<!-- Extra Resources Section -->
+<section id="extra-resources" class="section py-5" style="background: #ffffff;">
+  <div class="container" data-aos="fade-up">
+    <!-- Section Header -->
+    <div class="section-title d-none d-md-block" style="padding-bottom: 20px;">
+      <div class="section-title-label">
+        <small>Extra Resources</small>
+        <h2>Trusted Training from Global Experts</h2>
+      </div>
+    </div>
+
+
+    <div class="section-title-mobile d-block d-md-none rounded-4 p-4 mb-4">
+      <div class="text-center">
+        <small class="text-uppercase fw-semibold" style="letter-spacing: 0.05em; color:#fbb813;" >Extra Resources</small>
+        <h2 class="fw-bold mt-2 mb-3" style="font-size: 1.5rem; color: #222a44;">Supplement Your CPR Knowledge</h2>
+        <p class="text-muted mm" style="font-size: 1rem; line-height: 1.6; text-align: center;">
+          Trusted Training from Global Experts
+        </p>
+      </div>
+    </div>
+
+    <!-- Two-column layout -->
+<div class="row g-4 align-items-stretch">
+  <!-- Left: Text Content -->
+  <div class="col-md-7">
+    <div class="resource-card">
+      <h5 class="fw-bold mb-3" style="color: #00587A;">Why Explore External Resources?</h5>
+      <p class="text-dark fs-6" style="line-height: 1.8;">
+        Our training library provides a strong foundation, but learning from globally trusted experts can boost your confidence and sharpen your emergency response skills.
+      </p>
+      <p class="text-muted d-none d-md-block" style="font-size: 1.05rem; line-height: 1.8; text-align: justify;">
+        Access curated resources from renowned organizations like the American Red Cross, St John Ambulance, and ProFirstAid. These materials offer real-world guidance, professional demonstrations, and certifications.
+      </p>
+    </div>
+  </div>
+
+  <!-- Right: Resource Buttons -->
+  <div class="col-md-5 d-flex flex-column gap-3">
+    <a href="https://www.redcross.org/take-a-class/online-safety-classes/all-online-classes"
+       class="resource-link btn-custom-1"
+       target="_blank">
+      <strong>American Red Cross</strong>
+      <small>Online Safety and Certification Classes</small>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=GmqXqwSV3bo"
+       class="resource-link btn-custom-2"
+       target="_blank">
+      <strong>St John Ambulance</strong>
+      <small>Step-by-step CPR Demonstration</small>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=NxO5LvgqZe0"
+       class="resource-link btn-custom-3"
+       target="_blank">
+      <strong>ProFirstAid</strong>
+      <small>Hands-Only CPR for Bystanders</small>
+    </a>
+  </div>
+</div>
 
   </div>
 </section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5" style="background: linear-gradient(90deg, #eaf6fd 0%, #f8e8ff 100%);">
+  <div class="container" data-aos="fade-up">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow border-0 rounded-4 p-4 text-center" style="background:rgba(255,255,255,0.98);">
+          
+          <div class="mb-3">
+            <span style="
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 52px;
+              height: 52px;
+              border-radius: 50%;
+              background: linear-gradient(135deg, #5bc2fa 30%, #af77e7 100%);
+              box-shadow: 0 2px 12px rgba(91,194,250,0.10);
+            ">
+              <i class="bi bi-envelope-paper-heart" style="font-size: 1.65rem; color: #fff;"></i>
+            </span>
+          </div>
+
+          <h4 class="fw-bold mb-2" style="color:#373d52;">Join Lifespark</h4>
+          <p class="mb-3" style="color:#566073;font-size:1.05rem;">
+            Subscribe to receive CPR updates, expert tips, and new training releases.
+          </p>
+
+          <form id="subscribe-form" class="d-flex flex-column align-items-center gap-3">
+            <input
+              type="email"
+              name="subscriber_email"
+              placeholder="Enter your email"
+              required
+              class="form-control rounded-pill px-4 py-2"
+              style="max-width: 90%;"
+            >
+            <button type="submit"
+              class="fw-semibold"
+              style="
+                padding: .6em 1.6em;
+                background: linear-gradient(90deg,#2370b6 60%,#8d5be3);
+                color: #fff;
+                border-radius: 2em;
+                text-decoration: none;
+                letter-spacing: 0.02em;
+                box-shadow: 0 2px 8px rgba(35,112,182,0.11);
+                font-size: 1.08rem;
+                border: none;
+              ">
+              Subscribe
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
   </main>
@@ -261,7 +938,7 @@
   <footer id="footer" class="footer dark-background">
     <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Luke</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">LifeSpark</strong> <span>All Rights Reserved</span>
         </div>
     </div>
   </footer>
@@ -284,40 +961,29 @@
 
 
   <!-- Main JS File -->
-  <script src="../static/assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.querySelector('#videoGrid');
-  const iso = new Isotope(grid, {
-    itemSelector: '.element-item',
-    layoutMode: 'fitRows',
-    getSortData: {
-      title: '[data-title]'
-    }
-  });
+  (function () {
+    emailjs.init("27QgP0uQsaxgso0ls");
+  })();
 
-  // Filter buttons
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const filterValue = button.getAttribute('data-filter');
-      iso.arrange({ filter: filterValue });
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+  document.getElementById("subscribe-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = this.subscriber_email.value;
+
+    emailjs.send('service_rglla1a', 'template_19ra51l', {
+      subscriber_email: email,
+      to_email: 'scott@logncoding.com'
+    }).then(() => {
+      alert("Subscription successful!");
+      this.reset();
+    }, (error) => {
+      alert("Subscription failed: " + JSON.stringify(error));
     });
   });
-
-  // Search input
-  const searchInput = document.querySelector('#videoSearch');
-  searchInput.addEventListener('input', () => {
-    const searchValue = searchInput.value.toLowerCase();
-    iso.arrange({
-      filter: item => item.getAttribute('data-title').toLowerCase().includes(searchValue)
-    });
-  });
-});
 </script>
-
 
 
 
