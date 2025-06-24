@@ -25,7 +25,7 @@
 <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
 <style>
 .ratio-9x16 {
   aspect-ratio: 9 / 16;
@@ -123,7 +123,7 @@
 
 .video-row-minimal {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 2.5rem;
   margin-bottom: 118px;
   background: none;
@@ -134,8 +134,8 @@
 }
 
 .video-col-minimal {
-  flex: 0 0 450px;        
-  max-width: 480px;       
+  flex: 0 0 450px;
+  max-width: 480px;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -215,8 +215,8 @@
   margin-bottom: 0.2em;
   margin-top: 0.2em;
   font-weight: 400;
-  max-width: 680px;       
-  text-align: justify;    
+  max-width: 680px;
+  text-align: justify;
 }
 @media (max-width: 768px) {
   .video-row-minimal {
@@ -352,7 +352,7 @@
   <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
   <div class="container position-relative z-2" data-aos="fade-up">
     <div class="row align-items-center">
-      
+
       <!-- Left: Text Content -->
       <div class="col-lg-8 text-light">
         <h1 class="display-2 fw-bold text-light mb-4 def">Lifespark</h1>
@@ -398,7 +398,7 @@
       <!-- Image Column -->
       <div class="col-lg-5 mb-4 mb-lg-0">
         <img src="assets/img/about.jpg"
-             alt="About Lifespark" 
+             alt="About Lifespark"
              class="img-fluid rounded-4 shadow"
              style="object-fit:cover;min-height:320px;max-height:400px;width:90%; margin: 0 auto;">
       </div>
@@ -877,7 +877,7 @@ The video also emphasizes the importance of staying calm and listening carefully
     <div class="row justify-content-center">
       <div class="col-lg-6">
         <div class="card shadow border-0 rounded-4 p-4 text-center" style="background:rgba(255,255,255,0.98);">
-          
+
           <div class="mb-3">
             <span style="
               display: inline-flex;
