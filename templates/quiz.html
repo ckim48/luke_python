@@ -15,7 +15,7 @@
     .quiz-card {
       max-width: 600px;
       margin: auto;
-      margin-top: 150px;
+      margin-top: 40px;
       margin-bottom: 100px;
       background: white;
       border-radius: 16px;
@@ -99,6 +99,11 @@
 </header>
 
 <div class="container">
+  <div class="text-center mb-4" style="margin-top:120px;">
+  <h2 class="fw-bold" style="color:#ff4e50;">Lifespark CPR Quiz</h2>
+  <p class="text-muted">Test your knowledge and improve your CPR skills</p>
+</div>
+
   <div class="quiz-card">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <span>Question <span id="question-number">1</span>/10</span>
@@ -122,7 +127,7 @@
 
   <div id="chat-box" style="display:none; position:fixed; bottom:100px; right:30px; width:300px; height:400px; background:white; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.1); z-index:1000; overflow:hidden;">
     <div style="background:#ff4e50; color:white; padding:10px 16px; font-weight:500;">
-      Ask Heartsave AI
+      Ask Lifespark AI
       <span style="float:right; cursor:pointer;" onclick="toggleChat()">&times;</span>
     </div>
     <div id="chat-messages" style="padding:10px; height:300px; overflow-y:auto; font-size:14px;"></div>
